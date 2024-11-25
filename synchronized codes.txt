@@ -1,0 +1,367 @@
+Q1  synchronization method 
+class A 
+	loop :table print 
+
+class B thread class 
+
+
+class C thread class 
+
+Answer)
+
+import java.util.*;
+
+class A {
+    void show() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.print(i * 2 + " ");
+        }
+        System.out.println(); 
+    }
+}
+
+class B extends Thread {
+    public void run() {
+        System.out.println("Thread class");
+    }
+}
+
+class C extends Thread {
+    public void run() {
+        System.out.println("Rest of world");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A p = new A();
+        p.show();
+        
+        B p1 = new B();
+        p1.start();
+        
+        C p2 = new C();
+        p2.start();
+    }
+}
+---------------------------------------------------
+Q2    synchronization method 
+class A 
+	loop :table print 
+
+class B thread class 
+
+
+class C thread class 
+
+simultaneously 
+
+Answer)
+
+import java.util.*;
+
+
+class A {
+  synchronized  void show() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.print(i * 2 + " ");
+        }
+        System.out.println(); 
+    }
+}
+
+class B extends Thread {
+    synchronized public void run() {
+        System.out.println("Thread class");
+    }
+}
+
+class C extends Thread {
+  synchronized  public void run() {
+        System.out.println("Rest of world");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A p = new A();
+        p.show();
+        
+        B t = new B();
+        Thread p1=new Thread(t);
+        p1.start();
+        
+        C t2 = new C();
+          Thread p2=new Thread(t2);
+        p2.start();
+    }
+}
+
+--------------------------------------------------------------
+Q3
+
+import java.util.*;
+
+class A {
+  public void show(){
+    for(int i=0;i<=10;i++){
+      System.out.println(i+" ");
+    }
+  }
+}
+class B extends Thread{
+  public void run(){
+    System.out.println("thread1 class");
+  }
+}
+class C extends Thread{
+  public void run(){
+    System.out.println("thread2 class");
+  }
+}
+class D extends Thread{
+  public void run(){
+    System.out.println("thread3 class");
+  }
+}
+class E extends Thread{
+  public void run(){
+    System.out.println("thread4 class");
+  }
+}
+public class Main{
+  public static void main(String[]args){
+    A p=new A();
+    B p1=new B();
+    C p2=new C();
+    D p3=new D();
+    E p4=new E();
+    p.show();
+    p1.start();
+    p2.start();
+    p3.start();
+    p4.start();
+    
+  }
+}
+--------------------------------------------------------
+Q4
+import java.util.*;
+
+class A{
+  String name;
+  A(String name){
+    this.name=name;
+  }
+  
+}
+class B {
+  A a;
+  B(A a){
+    this.a=a;
+  }
+  void show(){
+    System.out.println(a.name);
+  }
+}
+public class Main{
+  public static void main(String[]args){
+    A p=new A("thread");
+    B s=new B(p);
+    s.show();
+  }
+}
+---------------------------------------------------------------
+Q5
+import java.util.*;
+
+class A{
+ public void show(int n){
+   for(int i=1;i<=n;i++){
+     try{
+       Thread.sleep(1000);
+     }catch(Exception ex){
+       
+     }
+     System.out.println(i+" ");
+   }
+ }
+}
+class B extends Thread {
+  A a;
+  B(A a){
+    this.a=a;
+  }
+   public void run(){
+     a.show(10);
+   }
+}
+public class Main{
+  public static void main(String[]args){
+    A a=new A();
+    B t=new B(a);
+    B t1=new B(a);
+    t.start();
+    t1.start();
+  }
+}
+
+-------------------------------------------------
+Q6
+
+import java.util.*;
+
+class A{
+  public void wish(int n){
+    for(int i=1;i<=10;i++){
+      System.out.print(i*n+" ");
+    }
+      System.out.println();
+  }
+
+}
+class B extends Thread{
+  A a;
+  B(A a){
+    this.a=a;
+  }
+  public void run(){
+    a.wish(4);
+  }
+}
+class C extends Thread{
+  A a;
+  C(A a){
+    this.a=a;
+  }
+  public void run(){
+    a.wish(5);
+  }
+}
+public class Main{
+  public static void main(String[]args){
+    A p=new A();
+    B t=new B(p);
+    C t1=new C(p);
+    t.start();
+    t1.start();
+  }
+}
+-------------------------------------
+Q7 synchronized block 
+
+import java.util.*;
+
+class A{
+ public void wish(int n){
+   synchronized(this){
+     for(int i=1;i<=10;i++){
+       try{
+         Thread.sleep(1000);
+       }catch(Exception ex){
+         
+       }
+       System.out.print(i*n+" ");
+     }
+   }
+ }
+}
+class B extends Thread{
+  A a;
+  B(A a){
+    this.a=a;
+  }
+  public void run(){
+    a.wish(3);
+  }
+}
+class C extends Thread{
+  A a;
+  C(A a){
+    this.a=a;
+  }
+  public void run(){
+    a.wish(7);
+  }
+}
+
+public class Main{
+  public static void main(String[]args){
+    A p=new A();
+    B t=new B(p);
+    C t1=new C(p);
+    t.start();
+    t1.start();
+  }
+}
+-------------------------------------------------
+Q8  synchronized block with multiple class extends thread :
+
+
+import java.util.*;
+
+class A{
+ public void wish(int n){
+   synchronized(this){
+     for(int i=1;i<=n;i++){
+       try{
+         Thread.sleep(1000);
+       }catch(Exception ex){
+         
+       }
+       System.out.print(i+" ");
+     }
+   }
+ }
+}
+class B extends Thread{
+  A a;
+  B(A a){
+    this.a=a;
+  }
+  public void run(){
+    a.wish(3);
+  }
+}
+class C extends Thread{
+  A a;
+  C(A a){
+    this.a=a;
+  }
+  public void run(){
+    a.wish(7);
+  }
+}
+class  D extends Thread{
+  A a;
+  D(A a){
+    this.a=a;
+  }
+  public void run(){
+    a.wish(8);
+  }
+}
+class E extends Thread{
+  A a;
+  E(A a){
+    this.a=a;
+  }
+  public void run(){
+    a.wish(7);
+  }
+}
+
+
+public class Main{
+  public static void main(String[]args){
+    A p=new A();
+    B t=new B(p);
+    C t1=new C(p);
+    D t2=new D(p);
+    E t3=new E(p);
+    t.start();
+    t1.start();
+    t2.start();
+    t3.start();
+  }
+}
