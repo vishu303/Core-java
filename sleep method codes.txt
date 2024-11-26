@@ -1,0 +1,296 @@
+Q1
+import java.util.*;
+
+
+class A extends Thread{
+  public void run(){
+    for(int i=0;i<=5;i++){
+      System.out.println(i+" ");
+    }
+  }
+}
+public class Main {
+    public static void main(String[] args) {
+      A p=new A();
+      A p1=new A();
+     A p2=new A();
+     A p3=new A();
+     p.start();
+     p1.start();
+     p2.start();
+     p3.start();
+  }
+}
+--------------------------------
+Q2
+import java.util.*;
+
+
+class A extends Thread{
+  public void run(){
+    for(int i=0;i<=5;i++){
+      try{
+        Thread.sleep(1000);
+      }
+      catch(Exception ex){
+        
+      }
+      System.out.println(i+" ");
+    }
+  }
+}
+public class Main {
+    public static void main(String[] args) {
+      A p=new A();
+      A p1=new A();
+     A p2=new A();
+     A p3=new A();
+     p.start();
+     p1.start();
+     p2.start();
+     p3.start();
+  }
+}
+------------------------------------------------------------
+Q3
+import java.util.*;
+
+
+class A extends Thread{
+  public void run(){
+    for(int i=0;i<=5;i++){
+      try{
+        Thread.sleep(1000);
+      }
+      catch(Exception ex){
+        
+      }
+      System.out.println(i+" ");
+    }
+  }
+}
+class B extends Thread{
+  public void run(){
+    for(int i=0;i<=5;i++){
+      try{
+        Thread.sleep(1000);
+      }
+      catch(Exception ex){
+        
+      }
+      System.out.println(i+" ");
+    }
+  }
+}
+class C extends Thread{
+  public void run(){
+    for(int i=0;i<=5;i++){
+      try{
+        Thread.sleep(1000);
+      }
+      catch(Exception ex){
+        
+      }
+      System.out.println(i+" ");
+    }
+  }
+}
+class D extends Thread{
+  public void run(){
+    for(int i=0;i<=5;i++){
+      try{
+        Thread.sleep(1000);
+      }
+      catch(Exception ex){
+        
+      }
+      System.out.println(i+" ");
+    }
+  }
+}
+
+public class Main {
+    public static void main(String[] args) {
+      A p=new A();
+      B p1=new B();
+     C p2=new C();
+     D p3=new D();
+     p.start();
+     p1.start();
+     p2.start();
+     p3.start();
+  }
+}
+--------------------------------------------------
+Q4
+
+
+import java.util.*;
+
+class A extends Thread{
+  public void run(){
+    for(int i=1;i<=10;i++){
+      try{
+        Thread.sleep(100);
+      }catch(Exception ex){
+        
+      }
+      System.out.print(i*2+" ");
+    }
+  }
+  
+}
+  
+  class B extends Thread{
+  public void run(){
+    for(int i=1;i<=10;i++){
+      try{
+        Thread.sleep(100);
+      }catch(Exception ex){
+        
+      }
+      System.out.print(i*3+" ");
+    }
+  }
+  
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+     A a=new A();
+     B b=new B();
+     a.start();
+     b.start();
+    }
+}
+--------------------------------------------------------------------
+Q5
+import java.util.*;
+
+class A extends Thread{
+  public void run(){
+     for(int i=1;i<=3;i++)  {
+      try{
+        Thread.sleep(100);
+      }catch(Exception ex){
+        
+      }
+      System.out.println(i+"hello world");
+    }
+  }
+  
+}
+
+class B extends Thread{
+  public void run(){
+     for(int i=1;i<=3;i++)  {
+      try{
+        Thread.sleep(100);
+      }catch(Exception ex){
+        
+      }
+      System.out.println(i+"wlecome to india");
+    }
+  }
+  
+}
+  
+
+
+public class Main {
+    public static void main(String[] args) {
+     A a=new A();
+     B b=new B();
+     a.start();
+     b.start();
+    }
+}
+-----------------------------------
+Q6
+import java.util.*;
+
+class A extends Thread{
+  public void run(){
+     for(int i=1;i<=10;i++)  {
+      try{
+        Thread.sleep(100);
+      }catch(Exception ex){
+        
+      }
+      System.out.println(i*2+" ");
+    }
+  }
+  
+}
+
+class B extends Thread{
+  public void run(){
+     for(int i=1;i<=10;i++)  {
+      try{
+        Thread.sleep(100);
+      }catch(Exception ex){
+        
+      }
+      System.out.println(i*2+" ");
+    }
+  }
+  
+}
+  class C extends Thread{
+  public void run(){
+     for(int i=1;i<=10;i++)  {
+      try{
+        Thread.sleep(100);
+      }catch(Exception ex){
+        
+      }
+      System.out.println(i*3+" ");
+    }
+  }
+  
+}
+class D extends Thread{
+  public void run(){
+     for(int i=1;i<=10;i++)  {
+      try{
+        Thread.sleep(100);
+      }catch(Exception ex){
+        
+      }
+      System.out.println(i*4+" ");
+    }
+  }
+  
+}
+class E extends Thread{
+  public void run(){
+     for(int i=1;i<=10;i++)  {
+      try{
+        Thread.sleep(100);
+      }catch(Exception ex){
+        
+      }
+      System.out.println(i*5+" ");
+    }
+  }
+  
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+     A a=new A();
+     B b=new B();
+      C c=new C();
+     D d=new D();
+      E e=new E();
+     
+     a.start();
+     b.start();
+       c.start();
+     d.start();
+       e.start();
+    
+    }
+}
