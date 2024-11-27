@@ -1,0 +1,263 @@
+Q1    Write a Java program to create two threads. One thread should print odd numbers from 1 to 10, and the other thread should print even numbers from 2 to 10. Ensure proper synchronization to alternate between the two threads.
+
+
+
+class A extends Thread{
+    public void run(){
+        for(int i=1;i<=10;i++){
+           if(i%2==0){
+               System.out.print(i+" ");
+           } 
+        }
+        System.out.println();
+    }
+}
+class B extends Thread{
+    public void run(){
+        for(int i=1;i<=10;i++){
+           if(i%2!=0){
+               System.out.print(i+" ");
+           } 
+        }
+         System.out.println();
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        A p=new A();
+        p.start();
+        try{
+            p.join();
+        }catch(Exception ex){
+            
+        }
+        B p1=new B();
+        p1.start();
+        
+    }
+}
+----------------------------------------------------------------------------------
+
+2)
+Write a Java program that demonstrates the use of the synchronized keyword to achieve thread safety. Create a class with a shared resource and two threads trying to access and modify that resource. Use synchronization to avoid conflicts.
+
+class A{
+    public synchronized void wish(int n){
+        for(int i=1;i<=n;i++){
+            try{
+                Thread.sleep(1000);
+            }catch(Exception ex){
+                
+            }
+            System.out.print(i+" ");
+        }
+    }
+}
+class B extends Thread{
+    A a;
+    B(A a){
+        this.a=a;
+    }
+    public void run(){
+        a.wish(7);
+    }
+}
+class C extends Thread{
+    A a;
+    C(A a){
+        this.a=a;
+    }
+    public void run(){
+        a.wish(5);
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        A p=new A();
+       B b1=new B(p);
+       b1.start();
+       C c1=new C(p);
+       c1.start();
+        
+    }
+-------------------------------------------------------------------
+3)
+Write a Java program that creates a simple countdown timer using Thread.sleep(). The program should start from 10 and print the remaining time after each second until reaching 0.
+
+
+class A extends Thread{
+    public  void run(){
+        for(int i=10;i>=0;i--){
+            try{
+                Thread.sleep(1000);
+            }catch(Exception ex){
+                
+            }
+            System.out.print(i+" ");
+        }
+    }
+}
+
+public class Main{
+    public static void main(String[]args){
+        A p=new A();
+         p.start();
+        
+    }
+}
+--------------------------------------------------------------------
+
+4)
+Create a Java program to simulate a traffic light. Use three threads to represent three different colors (red, yellow, and green). Each color should be displayed for a specific duration using Thread.sleep().
+ 
+class A extends Thread{
+    public void run(){
+        try{
+            Thread.sleep(1000);
+        }catch(Exception ex){
+            
+        }
+        System.out.println("red");
+    }
+}
+class B extends Thread{
+    public void run(){
+        try{
+            Thread.sleep(1000);
+        }catch(Exception ex){
+            
+        }
+        System.out.println("Yellow");
+    }
+}
+class C extends Thread{
+    public void run(){
+        try{
+            Thread.sleep(1000);
+        }catch(Exception ex){
+            
+        }
+        System.out.println("green");
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        A p=new A();
+         p.start();
+         try{
+             p.join();
+         }catch(Exception ex){
+
+         }
+         B b=new B();
+         b.start();
+         try{
+             b.join();
+         }catch(Exception ex){
+             
+         }
+         C c=new C();
+          c.start();
+        
+    }
+-----------------------------------------------------------------
+
+5)
+Design a Java program that simulates a race between three runners. Use three threads to represent the runners, and introduce delays with Thread.sleep(). Use Thread.join() to ensure that the race finishes only when all runners have completed.
+
+import java.util.*;
+
+class A extends Thread{
+  public void run(){
+    try{
+      Thread.sleep(1000);
+    }catch(Exception ex){
+      
+    }
+    System.out.println("A Runner");
+  }
+  
+}
+class B extends Thread{
+  public void run(){
+    try{
+      Thread.sleep(1000);
+    }catch(Exception ex){
+      
+    }
+    System.out.println("B Runner");
+  }
+  
+}
+class C extends Thread{
+  public void run(){
+    try{
+      Thread.sleep(2000);
+    }catch(Exception ex){
+      
+    }
+    System.out.println("C Runner");
+  }
+  
+}
+public class Main{
+  public static void main(String[]args){
+    A p=new A();
+    p.start();
+    B p1=new B();
+    p1.start();
+    C p2=new C();
+    p2.start();
+    try{
+      p2.join();
+    }catch(Exception ex){
+      
+    }
+  }
+---------------------------------------------------------------------------
+6)
+Write a Java program that creates two threads. The first thread prints numbers from 1 to 5, and the second thread prints letters from 'A' to 'E'. Ensure proper synchronization using Thread.sleep() and Thread.join() to achieve an ordered output.
+
+
+import java.util.*;
+
+class A extends Thread{
+  public synchronized  void run(){
+    for(int i=1;i<=5;i++){
+    try{
+      Thread.sleep(1000);
+    }catch(Exception ex){
+      
+    }
+    System.out.println(i+" ");
+    }
+  }
+  
+}
+class B extends Thread{
+  public synchronized  void run(){
+    for(char i='a';i<='e';i++){
+    try{
+      Thread.sleep(1000);
+    }catch(Exception ex){
+      
+    }
+    System.out.println(i+" ");
+    }
+  }
+  
+}
+
+public class Main{
+  public static void main(String[]args){
+    A p=new A();
+    p.start();
+     try{
+      p.join();
+    }catch(Exception ex){
+      
+    }
+    B p2=new B();
+    p2.start();
+   
+  }
