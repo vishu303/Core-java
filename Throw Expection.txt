@@ -1,0 +1,84 @@
+Q1
+class Voter{
+    Voter(int age){
+       if(age<18){
+     throw new ArithmeticException("you are not valid for vote");
+       }
+       else{
+           System.out.println("valid");
+       }
+        
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        new Voter(34);
+        
+    }
+}
+---------------------------------------------------
+Q2
+
+class Voter{
+    Voter(int n){
+       if(n%2==0){
+     throw new ArithmeticException("this is  a even number");
+       }
+       else{
+           System.out.println("not even");
+       }
+        
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        new Voter(3);
+        
+    }
+}
+--------------------------------
+Q3
+class Voter{
+    Voter(char a){
+       if(a=='e'||a=='i'||a=='o'||a=='u'){
+     throw new ArithmeticException("this is  a vowel");
+       }
+       else{
+           System.out.println("constant");
+       }
+        
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        new Voter('b');
+        
+    }
+}
+---------------------------------------------
+Q4
+class Voter {
+    
+    Voter(int a, int b, int c) {
+        
+        if (a == b && b == c) {
+            throw new ArithmeticException("all equal");
+        }
+    
+        else if (a >= b && a >= c) {
+            System.out.println("a is max");
+        } else if (b >= a && b >= c) {
+            System.out.println("b is max");
+        } else {
+            System.out.println("c is max");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+    
+        new Voter(12, 15, 10);
+       
+    }
+}
