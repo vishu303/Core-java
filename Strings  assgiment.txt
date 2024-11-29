@@ -1,0 +1,101 @@
+Q1  String constructors :
+a)String s=new String();
+
+public class Main{
+    public static void main(String[]args){
+        String s=new String("hello world");
+        System.out.println(s);
+    }
+}
+----------------------------------------
+Q2  String s=new String(String s1);
+
+
+public class Main{
+    public static void main(String[]args){
+     String s1=new String("Rest of the world");
+     String s2=new String(s1);
+     System.out.println(s2);
+    }
+}
+
+------------------------------------------------------
+Q3 StringBuffer sb=new StringBuffer(String sb);
+
+public class Main{
+    public static void main(String[]args){
+     StringBuffer sb=new StringBuffer("hello StringBuffer");
+     String s=new String(sb);
+     System.out.println(s);
+    }
+}
+
+--------------------------------------------------
+Q4  StringBuilder sb=new StringBuilder(String sb);
+
+
+
+public class Main{
+    public static void main(String[]args){
+     StringBuilder sb=new StringBuilder("hello StringBuilder");
+     String s=new String(sb);
+     System.out.println(s);
+    }
+}
+
+--------------------------------------------------------
+Q5  String s=new String(byte a);
+
+public class Main{
+    public static void main(String[]args){
+        byte a[]={3,5};
+        String s=new String (a);
+        System.out.println(a);
+    }
+}
+--------------------------------------------
+Q6  String s=new String (char a[]);
+public class Main{
+    public static void main(String[]args){
+        char a[]={'v','i','s','h','a','l'};
+        String s=new String (a);
+        System.out.println(a);
+    }
+}
+------------------------------------------
+Q7 charAt in string:
+public class Main{
+    public static void main(String[]args){
+      String s ="rest of the world";
+      System.out.println(s.charAt(3));
+    }
+}
+---------------------------------------
+Q8 concant in string:
+public class Main{
+    public static void main(String[]args){
+      String s ="rest";
+      s=s.concat("world");
+      System.out.println(s);
+    }
+}
+-------------------------------------------
+Q9 equals method in string:
+
+public class Main{
+    public static void main(String[]args){
+      String s1 ="rest";
+      String s2="rest";
+      System.out.println(s1.equals(s2));
+    }
+}
+-----------------------------------------
+Q10 substring 
+
+public class Main{
+    public static void main(String[]args){
+      String s1 ="rest of the world";
+
+      System.out.println(s1.substring(5));
+    }
+}
