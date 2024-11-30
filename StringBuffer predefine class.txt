@@ -1,0 +1,124 @@
+stringbuffer :
+length ()
+capacity()
+append()
+insert()
+indexOf()
+charAt()
+setchar()
+delete()
+trimtosize()
+ensurecapacity()
+setlength()
+reverse()
+deletecharAt()
+
+
+
+
+
+Q1
+public class Main{
+    public static void main(String[]args){
+        String s="rest of the world";
+        StringBuffer sb=new StringBuffer(s);
+        System.out.println(sb.length());
+    }
+}
+
+-------------------------------------------
+Q2
+public class Main{
+    public static void main(String[]args){
+        StringBuffer sb=new StringBuffer(45);
+        System.out.println(sb.capacity());
+    }
+}
+
+-----------------------------
+Q3
+
+public class Main{
+    public static void main(String[]args){
+        
+        StringBuffer sb=new StringBuffer("Rest of the");
+        
+        System.out.println(sb.append(" world"));
+    }
+}
+
+-------------------------------------------------
+Q4
+
+public class Main{
+    public static void main(String[]args){
+    String s="regex";
+        StringBuffer sb=new StringBuffer(s);
+        sb.insert(2,"p");
+        System.out.println(sb);
+    }
+}
+---------------------------------------
+Q5
+
+public class Main{
+    public static void main(String[]args){
+ 
+        StringBuffer sb=new StringBuffer("restoftheworld");
+        
+        System.out.println(sb.charAt(3));
+    }
+}
+---------------------------------------------
+Q6
+public class Main {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("restoftheworld");
+        sb.setCharAt(5, 'r');  
+        System.out.println(sb); 
+    }
+}
+
+-------------------------------------------------
+Q7
+public class Main{
+    public static void main(String[]args){
+        StringBuffer sb=new StringBuffer("Rest of the world");
+        System.out.println(sb.delete(3,5));
+    }
+}
+------------------------------------------
+Q8
+public class Main{
+    public static void main(String[]args){
+        StringBuffer sb=new StringBuffer("Rest of the world   ");
+        sb.trimToSize();
+        System.out.println(sb);
+    }
+}
+---------------------------------------------
+Q9
+
+public class Main {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("Rest of the world   ");
+        System.out.println("Initial Capacity: " + sb.capacity());
+        sb.ensureCapacity(34);
+        System.out.println("After ensureCapacity(34): " + sb.capacity());
+        System.out.println(sb);
+    }
+}
+
+------------------------------------------------------------
+Q10
+
+public class Main {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("Rest of the world   ");
+        
+        System.out.println(sb.reverse());
+    }
+}
+
+-----------------------------------------------------
+
