@@ -1,0 +1,171 @@
+Q1 string print loop through :
+
+public class Main{
+    public static void main(String[]args){
+        String s="hello world";
+        char a[]=s.toCharArray();
+        for(int i=0;i<a.length;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
+
+
+-------------------------------------------------------------------
+ Q2  string reverse without predefine method 
+
+public class Main{
+    public static void main(String[]args){
+        String s="helloworld";
+        char a[]=s.toCharArray();
+        for(int i=a.length-1;i>=0;i--){
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+-------------------------------------------------------------------
+
+Q3   string index print with single character 
+
+public class Main{
+    public static void main(String[]args){
+        String s="helloworld";
+        char a[]=s.toCharArray();
+        for(int i=a.length-1;i>=0;i--){
+            System.out.println(i+" ");
+        }
+    }
+}
+-------------------------------------------------------------------
+Q4
+String find vowel 
+java is learning platform 
+
+public class Main{
+    public static void main(String[]args){
+        String s="java is a learning paltform ";
+        char a[]=s.toCharArray();
+        for(int i=0;i<=a.length;i++){
+          if(a[i]=='a'||a[i]=='e'||a[i]=='i'||a[i]=='o'||a[i]=='u'){
+              System.out.println(a[i]+" ");
+          }
+        }
+    }
+}
+
+----------------------------------------------------------------
+
+Q5
+index print with character 
+count total 
+
+public class Main {
+    public static void main(String[] args) {
+        String s = "java is a learning platform";
+        char a[] = s.toCharArray();
+        int count = 0;
+
+        for (int i = 0; i < a.length; i++) { 
+            if (a[i] == 'a' || a[i] == 'e' || a[i] == 'i' || a[i] == 'o' || a[i] == 'u') {
+                System.out.print(a[i] + " "); 
+                count++;
+            }
+        }
+        System.out.println("\nTotal vowels: " + count); 
+    }
+}
+
+-------------------------------------------------------------------
+String find consonant  
+java is learning platform 
+
+class Main {
+    public static void main(String[] args) {
+        String s = "java is a learning platform";
+        char a[] = s.toCharArray();
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != 'a' && a[i] != 'i' && a[i] != 'e' && a[i] != 'o' && a[i] != 'u') {
+                System.out.print(a[i] + " ");
+            }
+        }
+    }
+}
+--------------------------------------------------------
+index print with character 
+count total 
+
+
+class Main {
+    public static void main(String[] args) {
+        String s = "java is a learning platform";
+        char a[] = s.toCharArray();
+        int count =0;
+        for (int i = 0; i < a.length; i++) {
+  if (a[i] != 'a' && a[i] != 'i' && a[i] != 'e' && a[i] != 'o' && a[i] != 'u') {
+                System.out.print(a[i] + " ");
+                count++;
+            }
+            
+        }
+        System.out.println();
+        System.out.println("total count"+count);
+    }
+}
+
+-------------------------------------------------------------------
+String  vowel and consoant 
+java is learning platform 
+
+count :which one maximum vowel and consoanat 
+
+public class Main {
+    public static void main(String[] args) {
+        String s = "java is a learning platform";
+        char[] a = s.toCharArray();
+        int vowelCount = 0, consonantCount = 0;
+
+        for (int i = 0; i < a.length; i++) { 
+            char ch = Character.toLowerCase(a[i]); 
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowelCount++;
+            } else if (ch >= 'a' && ch <= 'z') { 
+                consonantCount++;
+            }
+        }
+
+        
+        if (vowelCount > consonantCount) {
+            System.out.println("Vowels: " + vowelCount);
+        } else if (vowelCount < consonantCount) {
+            System.out.println("Consonants: " + consonantCount);
+        } else {
+            System.out.println("Vowels and consonants are equal.");
+        }
+    }
+}
+
+
+-------------------------------------------------------------------
+string input :
+
+java is learning platform 
+target :a 
+index 
+ 
+
+public class Main {
+    public static void main(String[] args) {
+        String s = "java is a learning platform";
+        char a[] = s.toCharArray();
+        char target = a[0]; 
+        
+        for (int i = 1; i < a.length; i++) { 
+            if (a[i] > target) {
+                target = a[i];
+            }
+        }
+        System.out.print(target);
+    }
+}
+
+----------------------------------------------------------------------
+
