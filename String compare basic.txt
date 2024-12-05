@@ -1,0 +1,136 @@
+Write a Java program that checks if two given strings "apple" and "Apple" are equal (case-sensitive comparison).
+
+ Ans)  
+
+public class Main {
+    public static void main(String[] args) {
+      String s1=new String("Apple");
+      String s2 =new String("apple");
+      System.out.print(s1==s2);
+        
+    }
+}
+
+
+Write a Java program to compare the strings "Hello" and "hello" using equals() and print if they are equal or not.
+
+
+Ans)
+
+public class Main {
+    public static void main(String[] args) {
+      String s1=new String("Hello");
+      String s2 =new String("hello");
+      System.out.print(s1.equals(s2));
+        
+    }
+}
+
+
+Write a program that takes two user inputs as strings and checks if they are the same using the equals() method.
+
+Ans)
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first string:");
+        String s1 = sc.nextLine();
+        System.out.println("Enter the second string:");
+        String s2 = sc.nextLine();
+
+        boolean isEqual = s1.equals(s2);
+
+        System.out.println("Are the strings equal " + isEqual);
+        
+    
+    }
+}
+
+Write a Java program to compare two strings, "Java" and "java", and explain why they are not equal using equals().
+
+
+public class Main{
+    public static void main(String[]args){
+        String s1="java";
+        String s2="Java";
+        System.out.print(s1.equalsIgnoreCase(s2));
+    }
+}
+
+
+Create a program that compares the two strings "sun" and "sunshine" using equals() and prints the result.
+
+public class Main{
+    public static void main(String[]args){
+        String s1="java";
+        String s2="Java";
+        System.out.print(s1.equalsIgnoreCase(s2));
+    }
+}
+
+Write a program to compare "banana" and "Banana" using equals(). If they are not equal, print a message saying "The strings are 
+different".
+
+public class Main{
+    public static void main(String[]args){
+        String s1="Banana";
+        String s2="banana";
+        if(s1.equals(s2)){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("The string are different");
+        }
+    }
+}
+
+Write a program that compares two strings: one entered by the user and the string "Welcome" using equals().
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String s1 = sc.nextLine()
+        String s2 = "Welcome";
+        System.out.println("Using equals( s1.equals(s2));
+      
+    }
+}
+
+Write a Java program that checks if two strings "world" and "WORLD" are equal. If they are not equal, print "The strings are case-sensitive."
+
+public class Main{
+    public static void main(String[]args){
+        String s1="world";
+        String s2="World";
+        if(s1.equals(s2)){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("The string are casesentive");
+        }
+    }
+}
+
+create a program that takes a user's first name and last name as input and checks if they are equal using equals().
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+    
+        System.out.print("Enter strings s1 and s2: ");
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+
+
+        System.out.println("Using equals: " + s1.equals(s2));
+    }
+}
